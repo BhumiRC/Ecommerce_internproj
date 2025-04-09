@@ -8,7 +8,7 @@ const NavBar = () => {
       <Logo to="/">MyApp</Logo>
       <NavLinks>
         <Link to="/">Home</Link>
-        {/* <Link to="/products">Products</Link> */}
+        <Link to="/products">Products</Link>
         <Link to="/cart">Cart</Link>
       </NavLinks>
     </Navbar>

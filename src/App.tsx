@@ -6,7 +6,7 @@ import Footer from './components/Footer';
 
 import HomePage from './container/HomePage/HomePage';
 import ProductsPage from './container/ProductsPage';
-import CartPage from './container/CartPage';
+import CartPage from './container/CartPage/CartPage';
 import ProductDetailsPage from './container/ProductsPage/ProductDetailsPage';
 import { AppWrapper, MainContent } from './App.styles';
 

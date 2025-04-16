@@ -1,7 +1,7 @@
-
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Product } from '../../types/Product';
+import { useCart } from '../CartPage/CartContext';
 import {
   Container,
   ProductCard,
@@ -12,9 +12,10 @@ import {
 } from './ProductsDetailsPage.styles';
 
 const ProductDetailsPage = () => {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>(); // Add type for useParams
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
+  const { addToCart } = useCart(); // Correctly destructure useCart
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -42,6 +43,7 @@ const ProductDetailsPage = () => {
         <ProductTitle>{product.title}</ProductTitle>
         <ProductPrice>${product.price}</ProductPrice>
         <ProductDescription>{product.description}</ProductDescription>
+        <button onClick={() => addToCart(product)}>Add to Cart</button> {/* Properly place the button */}
       </ProductCard>
     </Container>
   );
